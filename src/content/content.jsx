@@ -1,21 +1,37 @@
 import React, { useEffect } from "react";
 
-const ContentPage = () => {
+function ContentPage() {
+
+
+
   useEffect(() => {
-    console.log("ContentPage component is mounted and running!");
+    console.log("Content Page");
+    // window.addEventListener("message", (e) => {
+    //   console.log(e, "START_APPLY");
+    //   if (e.data.type === "START_APPLY") {
+    //     console.log("START_APPLY");
+    //   }
+
+    //   // Query the DOM for all buttons that contain "Easy Apply"
+    //   const applyButtons = document.getElementById("jobs-apply-button-id");
+
+
+    //   if (applyButtons) {
+    //     applyButtons.click();
+    //   }
+
+
+    //   console.log(applyButtons, "applyButtons");
+    // });
   }, []);
 
+
+
   return (
-    <div
-      style={{ padding: "20px", backgroundColor: "#f0f0f0", margin: "10px" }}
-    >
+    <div>
       <h1>Content Page</h1>
-      <p>
-        If you can see this message, the content.js file is running
-        successfully!
-      </p>
     </div>
   );
-};
+}
 
 export default ContentPage;

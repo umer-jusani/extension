@@ -8,9 +8,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://www.linkedin.com/*"],
-      "js": ["content.js"]
+      "matches": ["https://www.linkedin.com/jobs/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
     }
   ],
-  "permissions": ["storage"]
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": ["https://www.linkedin.com/*"]
 }

@@ -6,11 +6,11 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    chrome.storage.local.get("jobbee", (result) => {
-      console.log(result);
-    });
-  }, []);
+
+  const handleApplyClick = () => {
+    // Send the message to the content script to start the apply process
+    window.postMessage({ type: "START_APPLY" }, "*");
+  };
 
   return (
     <>
@@ -23,7 +23,7 @@ function App() {
         </a>
       </div> */}
       <h1>Jobbee</h1>
-      <button className="btn">Start Applying Job</button>
+      <button className="btn" onClick={handleApplyClick}>Start Applying Job</button>
     </>
   );
 }
